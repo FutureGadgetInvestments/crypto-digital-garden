@@ -1,0 +1,6 @@
+{% assign linked_note = site.notes | where: "slug", include.slug | first %}
+{% if linked_note %}
+<a href="{{ linked_note.url | relative_url }}">{{ linked_note.title }}</a>
+{% else %}
+<span class="broken-link">{{ include.slug }}</span>
+{% endif %}

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="home">
+  {{ content }}
+
+  <section class="recent-notes">
+    <h2>Recent Notes</h2>
+    <ul class="note-list">
+      {% assign sorted_notes = site.notes | sort: 'date' | reverse %}
+      {% for note in sorted_notes limit:10 %}
+      <li>
+        <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+        {% if note.status %}
+        <span class="status-badge status-{{ note.status }}">{{ note.status }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

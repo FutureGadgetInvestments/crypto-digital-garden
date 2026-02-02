@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<article class="note">
+  <header class="note-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.tags %}
+    <div class="note-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if page.status %}
+    <div class="note-status status-{{ page.status }}">
+      {{ page.status }}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="note-content">
+    {{ content }}
+  </div>
+
+  {% assign backlinks = site.notes | where_exp: "note", "note.content contains page.slug" | where_exp: "note", "note.url != page.url" %}
+  {% if backlinks.size > 0 %}
+  <div class="backlinks">
+    <h2>Linked References</h2>
+    <ul>
+      {% for backlink in backlinks %}
+      <li>
+        <a href="{{ backlink.url | relative_url }}">{{ backlink.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="note-meta">
+    {% if page.date %}
+    <span class="note-date">Created: {{ page.date | date: "%B %d, %Y" }}</span>
+    {% endif %}
+    {% if page.last_modified_at %}
+    <span class="note-updated">Updated: {{ page.last_modified_at | date: "%B %d, %Y" }}</span>
+    {% endif %}
+  </div>
+</article>

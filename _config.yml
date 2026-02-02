@@ -1,0 +1,51 @@
+# Site settings
+title: Digital Garden
+description: A personal knowledge base and digital garden
+baseurl: "" # subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Author
+author:
+  name: Your Name
+  email: your.email@example.com
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections for digital garden notes
+collections:
+  notes:
+    output: true
+    permalink: /notes/:slug
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - LICENSE
