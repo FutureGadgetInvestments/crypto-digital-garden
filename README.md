@@ -1,15 +1,20 @@
-# Digital Garden
+# Crypto Investment Research Garden
 
-A Jekyll template for creating a digital garden - a personal wiki of interconnected notes and ideas.
+A digital garden for exploring and documenting crypto investment ventures.
+
+## Research Categories
+
+- **Perp DEX Liquidity Pools**: Research on perpetual DEX LP strategies and yield opportunities
+- **Stable Coins**: Analysis of stablecoin mechanisms, risks, and yield strategies
+- **Zero Coupon Bonds**: Exploration of DeFi fixed income and zero coupon bond protocols
 
 ## Features
 
-- **Bidirectional links**: Notes automatically show backlinks from other notes that reference them
-- **Growth stages**: Mark notes as seedling, budding, or evergreen to indicate maturity
-- **Tags**: Organize notes with tags
+- **Bidirectional links**: Research automatically shows backlinks from other entries that reference them
+- **Growth stages**: Mark research as seedling, budding, or evergreen to indicate maturity
+- **Categories**: Organize research by investment category
+- **Tags**: Additional organization with tags
 - **Clean, minimal design**: Focus on content with a distraction-free layout
-- **Responsive**: Works on desktop and mobile
-- **SEO-friendly**: Includes jekyll-seo-tag and sitemap generation
 
 ## Quick Start
 
@@ -31,64 +36,60 @@ A Jekyll template for creating a digital garden - a personal wiki of interconnec
    ```
 4. Open http://localhost:4000 in your browser
 
-## Creating Notes
+## Creating Research
 
-Notes live in the `_notes/` directory. Create a new Markdown file with front matter:
+Research lives in the `_research/` directory. Create a new Markdown file with front matter:
 
 ```markdown
 ---
-title: My Note Title
-date: 2024-01-15
+title: My Research Title
+date: 2026-02-02
 status: seedling
+category: perp-dex-liquidity-pools
 tags: [topic1, topic2]
 ---
 
-Your note content here...
+Your research content here...
 ```
 
 ### Front Matter Options
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `title` | Yes | The note title |
+| `title` | Yes | The research title |
 | `date` | Yes | Creation date (YYYY-MM-DD) |
 | `status` | No | Growth stage: `seedling`, `budding`, or `evergreen` |
+| `category` | No | One of: `perp-dex-liquidity-pools`, `stable-coins`, `zero-coupon-bonds` |
 | `tags` | No | List of tags |
 | `last_modified_at` | No | Last update date |
 
-### Linking Notes
+### Linking Research
 
-Link to other notes using standard Markdown:
+Link to other research using standard Markdown:
 
 ```markdown
-Check out my thoughts on [digital gardening](/notes/digital-gardening).
+Check out my analysis of [stablecoins](/research/stablecoin-overview).
 ```
 
-Notes will automatically display "Linked References" showing all notes that link to them.
+Research will automatically display "Linked References" showing all entries that link to them.
 
-## Customization
+## Structure
 
-### Site Configuration
-
-Edit `_config.yml` to set:
-- Site title and description
-- Author information
-- Base URL (if not hosting at root)
-
-### Styling
-
-Modify `assets/css/style.css` to customize:
-- Colors (via CSS variables)
-- Typography
-- Layout
-
-### Layouts
-
-Customize layouts in `_layouts/`:
-- `default.html` - Base layout with header/footer
-- `note.html` - Individual note pages
-- `page.html` - Static pages
-- `home.html` - Homepage
+```
+.
+├── _config.yml          # Site configuration
+├── _includes/           # Reusable components
+├── _layouts/            # Page templates
+├── _research/           # Your research entries
+├── assets/
+│   └── css/
+│       └── style.css    # Styles
+├── about.md             # About page
+├── index.md             # Homepage
+├── research.md          # Research index page
+├── Gemfile              # Ruby dependencies
+└── README.md
+```
 
 ## Deployment
 
@@ -98,36 +99,6 @@ Customize layouts in `_layouts/`:
 2. Go to Settings > Pages
 3. Select your branch as the source
 4. Site will be available at `https://username.github.io/repo-name`
-
-Note: Update `baseurl` in `_config.yml` if deploying to a subdirectory.
-
-### Other Platforms
-
-The site can be deployed to any static hosting:
-- Netlify
-- Vercel
-- Cloudflare Pages
-
-Build command: `bundle exec jekyll build`
-Output directory: `_site`
-
-## Structure
-
-```
-.
-├── _config.yml          # Site configuration
-├── _includes/           # Reusable components
-├── _layouts/            # Page templates
-├── _notes/              # Your garden notes
-├── assets/
-│   └── css/
-│       └── style.css    # Styles
-├── about.md             # About page
-├── index.md             # Homepage
-├── notes.md             # Notes index page
-├── Gemfile              # Ruby dependencies
-└── README.md
-```
 
 ## License
 

@@ -1,6 +1,6 @@
 # Site settings
-title: Digital Garden
-description: A personal knowledge base and digital garden
+title: Crypto Investment Research
+description: A digital garden for exploring crypto investment ventures
 baseurl: "" # subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
@@ -22,19 +22,19 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Collections for digital garden notes
+# Collections for research
 collections:
-  notes:
+  research:
     output: true
-    permalink: /notes/:slug
+    permalink: /research/:slug
 
 # Defaults
 defaults:
   - scope:
       path: ""
-      type: "notes"
+      type: "research"
     values:
-      layout: "note"
+      layout: "research"
   - scope:
       path: ""
       type: "pages"

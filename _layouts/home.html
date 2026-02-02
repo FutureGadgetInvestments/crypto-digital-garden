@@ -4,15 +4,18 @@ layout: default
 <div class="home">
   {{ content }}
 
-  <section class="recent-notes">
-    <h2>Recent Notes</h2>
+  <section class="recent-research">
+    <h2>Recent Research</h2>
     <ul class="note-list">
-      {% assign sorted_notes = site.notes | sort: 'date' | reverse %}
-      {% for note in sorted_notes limit:10 %}
+      {% assign sorted_research = site.research | sort: 'date' | reverse %}
+      {% for item in sorted_research limit:10 %}
       <li>
-        <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
-        {% if note.status %}
-        <span class="status-badge status-{{ note.status }}">{{ note.status }}</span>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% if item.category %}
+        <span class="category-badge">{{ item.category }}</span>
+        {% endif %}
+        {% if item.status %}
+        <span class="status-badge status-{{ item.status }}">{{ item.status }}</span>
         {% endif %}
       </li>
       {% endfor %}

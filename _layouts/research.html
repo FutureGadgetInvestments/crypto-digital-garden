@@ -22,7 +22,7 @@ layout: default
     {{ content }}
   </div>
 
-  {% assign backlinks = site.notes | where_exp: "note", "note.content contains page.slug" | where_exp: "note", "note.url != page.url" %}
+  {% assign backlinks = site.research | where_exp: "item", "item.content contains page.slug" | where_exp: "item", "item.url != page.url" %}
   {% if backlinks.size > 0 %}
   <div class="backlinks">
     <h2>Linked References</h2>
